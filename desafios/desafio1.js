@@ -1,6 +1,6 @@
-var nombre = prompt ("ingrese su usuario");
+var nombre = prompt ("ingrese un usuario");
 
-var contrasenia = prompt ("Ingrese su contraseña de 3 numeros");
+var contrasenia = prompt ("Ingrese una contraseña de 4 numeros");
 
 alert ("su usuario es " + nombre)
 
