@@ -47,7 +47,7 @@ let gastoImpuestosUsuario = parseInt(prompt('Cuanto gastó impuestos?'));
 
 
 let gasto1 = new Gasto(gastoSuperUsuario, "supermercado", "abril");
-infoGasto()
+console.log(gasto1)
 gasto1.infoGasto()
 
 let gasto2 = new Gasto(gastoVerduleriaUsuario, "verduleria", "abril")
