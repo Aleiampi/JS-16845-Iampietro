@@ -4,6 +4,9 @@ class Gasto {
         this.categria = categoria;
         this.fecha = fecha;
     }
+    infoGasto() {
+        console.log('gastaste ' + this.monto + ' en ' + this.categria + ' en el mes de ' + this.fecha)
+    }
 }
 
 function agregarIngreso() {
@@ -44,13 +47,16 @@ let gastoImpuestosUsuario = parseInt(prompt('Cuanto gastó impuestos?'));
 
 
 let gasto1 = new Gasto(gastoSuperUsuario, "supermercado", "abril");
-console.log(gasto1)
+infoGasto()
+gasto1.infoGasto()
 
 let gasto2 = new Gasto(gastoVerduleriaUsuario, "verduleria", "abril")
 console.log(gasto2)
+gasto2.infoGasto()
 
 let gasto4 = new Gasto(gastoImpuestosUsuario, "impuestos", "abril");
 console.log(gasto4)
+gasto4.infoGasto()
 
 totalGastosMes();
 console.log(gastoTotalMes)
