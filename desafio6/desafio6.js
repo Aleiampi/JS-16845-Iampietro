@@ -39,11 +39,11 @@ let totalGastosMes = [];
 //agregar ingresos
 //funcion para que el usuario agregue sus ingresos
 function agregarIngreso() {
-    let ingresosUsuario = parseInt(prompt('Cuanles son tus ingresos mensuales? (en números, sin puntos ni comas)'));
+    let ingresosUsuario = parseInt(prompt('Cuales son tus ingresos mensuales? (en números, sin puntos ni comas)'));
 
     while (isNaN(ingresosUsuario)) {
         alert('El número ingresado no es válido');
-        ingresosUsuario = parseInt(prompt('Cuanles son tus ingresos mensuales? (en números, sin puntos ni comas)'));
+        ingresosUsuario = parseInt(prompt('Cuales son tus ingresos mensuales? (en números, sin puntos ni comas)'));
     }
     return ingresosUsuario;
 }

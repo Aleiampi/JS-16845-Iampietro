@@ -11,7 +11,7 @@ balance debe - haber
 =>agregar gastos a array
 =>mostrar gastos por categoria?
 =>mostrar balance
-=>ahorroofrecer ahorro por mes segun porcenaje elegido por usuario
+=>ahorro ofrecer ahorro por mes segun porcenaje elegido por usuario
 
 ***/
 // ingresos = 0
@@ -37,13 +37,13 @@ let gastoTotalMes = 0
 let totalGastosMes = [];
 
 //agregar ingresos
-//funcion para que el usuario agregue sus ingresos
+//funcion para que el usuario agregue sus ingresos por prompt 
 function agregarIngreso() {
-    let ingresosUsuario = parseInt(prompt('Cuanles son tus ingresos mensuales? (en números, sin puntos ni comas)'));
+    let ingresosUsuario = parseInt(prompt('Cuáles son tus ingresos mensuales? (en números, sin puntos ni comas)'));
 
     while (isNaN(ingresosUsuario)) {
         alert('El número ingresado no es válido');
-        ingresosUsuario = parseInt(prompt('Cuanles son tus ingresos mensuales? (en números, sin puntos ni comas)'));
+        ingresosUsuario = parseInt(prompt('Cuáles son tus ingresos mensuales? (en números, sin puntos ni comas)'));
     }
     return ingresosUsuario;
 }
@@ -53,7 +53,7 @@ var ingresos = agregarIngreso();
 console.log(ingresos)
 document.write('Sus ingresos son $' + ingresos + '<br>')
 
-//funcion para que el usuario agregue sus gastos
+//funcion para que el usuario agregue sus gastos por prompt, devuelve un objeto
 function agregarGasto(categoriaUsuario, montoUsuario, mesUsuario) {
 
     categoriaUsuario = prompt('En qué gastaste?');
@@ -76,16 +76,17 @@ function agregarGasto(categoriaUsuario, montoUsuario, mesUsuario) {
 
 }
 
-//funcion para pedir gasto al usuario
+//funcion para pedir gastos al usuario, incluye la funcion para que el usuario
+//ingrese sus gastos por propt y agrega ese objeto al array
 function ingresoGastos() {
     let preguntaGastos = prompt('Quiere ingresar un gasto (Y/N)');
     while ((preguntaGastos == 'Y')) {
         //creo el nuevo gasto
         let nuevoGasto = agregarGasto()
-        console.log(nuevoGasto)
+        console.log(nuevoGasto) //temporal, a remover
             //agrego al arrray de gastos del mes
         totalGastosMes.push(new Gasto(nuevoGasto.categoriaUsuario, nuevoGasto.montoUsuario, nuevoGasto.mesUsuario))
-        console.log(totalGastosMes)
+        console.log(totalGastosMes) //temporal, a remover
         preguntaGastos = prompt('Quiere ingresar un gasto (Y/N)');
     }
 }
