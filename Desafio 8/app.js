@@ -25,7 +25,12 @@ let gastos = 0;
 let balance = ingresos - gastos;
 
 //rellenar el formulario
+//crear los elementos llamando al html
+const ingresosMensualesPrint = document.getElementById('ingresosMensualesPrint');
+const gastosMensualesPrint = document.getElementById('gastosMensualesPrint');
+const balanceMensualPrint = document.getElementById('balanceMensualPrint');
 
+//crear los parrafor originales mostrando el bal inicial de cero
 ingresosPrint = document.createElement('p')
 ingresosPrint.textContent = ingresos;
 ingresosMensualesPrint.appendChild(ingresosPrint);
@@ -37,11 +42,6 @@ gastosMensualesPrint.appendChild(gastosPrint);
 balancePrint = document.createElement('p')
 balancePrint.textContent = balance;
 balanceMensualPrint.appendChild(balancePrint);
-
-
-
-
-
 
 
 //********1-pedir al usuario sus ingresos
@@ -59,7 +59,7 @@ function agregarIngreso() {
 //ejecuto pedir ingresos al usuario
 ingresos = agregarIngreso();
 console.log(ingresos)
-    //agregar gastos mensuales al DOM
+    //actualizar los ingresos en el html segun el dato ingresado por el usuario
 ingresosPrint.textContent = ingresos;
 
 
@@ -137,7 +137,7 @@ gastosMes.push(gasto1, gasto2, gasto3, gasto4, gasto5, gasto6);
 console.log(gastosMes);
 
 
-//agrego los gastos al html
+//agrego los gastos del array al html como lista en el div "Detalle de sus gastos"
 for (let gasto of gastosMes) {
 
     const itemLista = document.createElement('li')
@@ -154,7 +154,8 @@ gastos = gastosMes.reduce((sumatoria, expense) => sumatoria + expense.monto, 0)
 
 console.log(gastosMes)
 console.log(gastos)
-    // document.write('Sus gastos son $' + gastosMes + '<br>')
 
+//actualizo el monto del <p> que contiene la suma de los gastos
 gastosPrint.textContent = gastos;
+//actualizo el monto del <p> que contiene el balance
 balancePrint.textContent = ingresos - gastos;
