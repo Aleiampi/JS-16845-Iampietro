@@ -32,6 +32,7 @@
  const inputGastos = document.getElementById('inputGastos')
  const btnEnviarGasto = document.getElementById('btnEnviarGasto')
  let gastosEnPantalla = document.getElementById('gastosEnPantalla')
+ let listaGastos = document.getElementById('listaGastos')
 
  //crear span para imprimir los ingresos en pantalla ///>>>Desafio 1: modificar el DOM con input de usuario
  let gastosPrint = document.createElement('span')
