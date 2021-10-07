@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+
+<body class="bg-warning">
+    <h1>Presupuesto</h1>
+    <div class="container bg-info m-5 rounded-3 p-5">
+        <h2>Ingrese sus ingresos mensuales totales</h2>
+        <form class="p-5" id="formIngresos">
+            <input type="text" id="inputIngresos">
+            <label for="inputIngresos">Cuales son sus ingresos mensuales?</label>
+            <button class="btn btn-light" id="btnEnviarIngresos">Enviar</button>
+        </form>
+        <h4 id="ingresosEnPantalla">Sus ingresos mensuales son $</h4>
+    </div>
+
+    <div class="container bg-info m-5 rounded-3 p-5">
+        <h2>Ingrese sus gastos</h2>
+        <div class="col">
+            <label for="categoriaGastos">Categoria</label>
+            <select name="categoriaGastos" id="categoriasGastos">
+                <option hidden disabled selected value> -- select an option -- </option>
+                <option value="gastosFijos">Gastos Fijos</option>
+                <option value="compras">Compras</option>
+                <option value="transporte">Transporte</option>
+                <option value="ocio">Ocio</option>
+            </select>
+        </div>
+        <form id="formGastos">
+            <input type="text" id="inputGastos">
+            <label for="inputGastos">Cuales son sus gastos?</label>
+            <button class="btn btn-light" id="btnEnviarGasto">Enviar</button>
+        </form>
+        <h4 id="gastosEnPantalla">Sus gastos mensuales son $</h4>
+        </form>
+    </div>
+
+
+    <div class="row mx-auto justify-content-center">
+        <!-- aqui va el detalle de gastos por categoria -->
+        <div class="list-group bg-light bg-opacity-50 mx-5 my-3 p-5 rounded-3 col-5">
+            <h4>Sus gastos presupuestados son:</h4>
+            <p class="list-group-item" id="sumaGastosFijos">Gastos fijos: $</p>
+            <p class="list-group-item">Comida: $xxxxxx</p>
+            <p class="list-group-item">Transporte: $xxxxx</p>
+            <p class="list-group-item">Ocio: $xxxxx</p>
+        </div>
+
+        <!-- aqui va la lista total de gastos, se genera e inserta desde js -->
+        <div class="col-5 mx-auto bg-light bg-opacity-50 my-3 p-5 rounded-3">
+            <h4>Detalle de sus gastos:</h4>
+            <ul id="listaGastos">
+
+            </ul>
+        </div>
+
+
+    </div>
+
+
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
