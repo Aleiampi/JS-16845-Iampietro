@@ -1,0 +1,70 @@
+/* ocultar input */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.oculto {
+    /* height: 0px;
+    width: 0px; */
+    display: none;
+}
+
+#contIngresos {
+    width: 70%;
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+    padding: 10%;
+    border-radius: 10px;
+}
+
+#inputIngresos {
+    margin: 5%;
+}
+
+#divListaGastos {
+    display: flex;
+    border-radius: 10px;
+    margin: auto;
+}
+
+#formularioGastos {
+    width: 45%;
+    margin-top: 50px;
+    min-width: 350px;
+    max-width: 600px;
+}
+
+.grupo {
+    margin: 20px;
+}
+
+.labelGasto {
+    width: 300px;
+}
+
+.btnGastos {
+    width: 80px;
+}
+
+#listaPresupuestos {
+    min-width: 350px;
+}
+
+#btnEnviarPresu {
+    width: 100%;
+}
+
+#btnEnviarPresu:hover {
+    background-color: darkslateblue;
+    color: lavender;
+    margin-top: 10px;
+}

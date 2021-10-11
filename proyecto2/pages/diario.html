@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+
+<body class="bg-warning container-fluid">
+    <h1>Presupuesto</h1>
+
+    <!-- ingreso gastos -->
+    <div class="container inputGastos bg-info my-3 p-5 rounded-3">
+        <h2>Gastos</h2>
+        <p>Ingrese un gasto:</p>
+        <form class="row" id="formGastos">
+            <div class="col">
+                <label for="categoriaGastos">Categoria</label>
+                <select name="categoriaGastos" id="categoriasGastos">
+                    <option hidden disabled selected value> -- select an option -- </option>
+                    <option value="gastosFijos">Gastos Fijos</option>
+                    <option value="compras">Compras</option>
+                    <option value="transporte">Transporte</option>
+                    <option value="ocio">Ocio</option>
+                </select>
+            </div>
+            <div class="col">
+                <input type="text" id="inputGastos">
+                <label for="inputGastos">Cuales son sus gastos?</label>
+            </div>
+            <div class="col">
+                <label for="detalleGasto">Descripcion</label>
+                <input type="text" id="detalleGasto">
+            </div>
+            <button class="btn btn-light" id="btnGasto">Enviar</button>
+        </form>
+    </div>
+
+    <!-- ingresos - balance - gastos -->
+    <!-- aqui va el detalle de ingresos, gastos, y en medio el saldo -->
+    <div class="row  bg-dark my-3 mx-auto p-5 ">
+        <div class="col bg-success rounded-pill text-center mx-3 p-3" id="ingresosMensualesPrint">
+            <h3>Ingresos</h3>
+        </div>
+        <div class="col bg-warning rounded-pill text-center mx-3 p-3" id="balanceMensualPrint">
+            <h3>Balance</h3>
+        </div>
+        <div class="col bg-danger rounded-pill text-center mx-3 p-3" id="gastosMensualesPrint">
+            <h3>Gastos</h3>
+        </div>
+    </div>
+
+    <!-- detalle presupuestos  -->
+    <div class="row mx-auto justify-content-center">
+        <!-- aqui va el detalle de gastos por categoria -->
+        <div class="list-group bg-light bg-opacity-50 my-3 p-5 rounded-3 col-5" id="listaPresupuestos">
+            <h4>Presupuestos del mes:</h4>
+        </div>
+
+        <!-- detalle gatos -->
+        <div class="col-5 mx-auto bg-light bg-opacity-50 my-3 p-5 rounded-3">
+            <h4>Detalle de sus gastos:</h4>
+            <ul id="listaGastos">
+            </ul>
+        </div>
+
+
+    </div>
+
+    <script src="../js/diario.js"></script>
+</body>
+
+</html>
