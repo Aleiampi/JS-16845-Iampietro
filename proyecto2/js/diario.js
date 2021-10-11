@@ -40,6 +40,9 @@ class Presupuesto {
     constructor(presu) {
         this.categoria = presu.categoria;
         this.monto = parseInt(presu.monto);
+        if (presu.monto = isNaN) {
+            this.monto = 0
+        }
     }
     detallePresupuestos() {
         return `Planeas gastar ${this.monto} en ${this.categoria}`
@@ -88,11 +91,22 @@ class Gasto {
 let gastosMes = [];
 const listaGastos = document.getElementById('listaGastos')
 
+function soloNumeros(input) {
+    input.addEventListener('keyup', () => {
+        input.value = input.value.replace(/\s/g, '').replace(/\D/g, '');
+
+    })
+}
+
+let inputGastos2 = document.getElementById('inputGastos')
+soloNumeros(inputGastos2)
+
 //funcion para que el usuario agregue sus gastos por prompt, devuelve un objeto 
 function agregarGasto() {
 
     categoriaUsuario = document.getElementById('categoriasGastos').value;
-    montoUsuario = document.getElementById('inputGastos').value;
+    montoUsuario = inputGastos2.value;
+
     detalleUsuario = document.getElementById('detalleGasto').value;
 
     return {

@@ -12,6 +12,18 @@
  ingresosEnPantalla.appendChild(ingresosPrint)
  ingresosPrint.textContent = ingresos
 
+
+
+
+ //evitar que se ingresen los datos con tecla enter
+ document.addEventListener('DOMContentLoaded', () => {
+     document.querySelectorAll('input[type=text]').forEach(node => node.addEventListener('keypress', e => {
+         if (e.keyCode == 13) {
+             e.preventDefault();
+         }
+     }))
+ });
+
  //reset input despues de ingreso
  function clear() {
      document.getElementById('formIngresos').reset();
@@ -98,7 +110,7 @@
  function clickBtnPresu(boton, input, print, categoria) {
      boton.addEventListener('click', (e) => {
          e.preventDefault();
-         let valorInput = input.value.replace(/\s/g, '').replace(/\D/g, '');;
+         let valorInput = input.value.replace(/\s/g, '').replace(/\D/g, '');
          print.textContent = valorInput;
          presusMes.push(new Presupuesto(categoria, parseInt(valorInput)))
          clearInputs();
