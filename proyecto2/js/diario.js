@@ -40,7 +40,7 @@ class Presupuesto {
     constructor(presu) {
         this.categoria = presu.categoria;
         this.monto = parseInt(presu.monto);
-        if (presu.monto = isNaN) {
+        if (presu.monto === isNaN) {
             this.monto = 0
         }
     }
