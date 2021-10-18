@@ -40,7 +40,10 @@ class Presupuesto {
     constructor(presu) {
         this.categoria = presu.categoria;
         this.monto = parseInt(presu.monto);
-        if (presu.monto === isNaN) {
+        if (presu.monto == isNaN) {
+            this.monto = 0
+        }
+        if (presu.monto === "") {
             this.monto = 0
         }
     }
@@ -48,6 +51,9 @@ class Presupuesto {
         return `Planeas gastar ${this.monto} en ${this.categoria}`
     }
 }
+
+
+
 
 const presusJSON = JSON.parse(localStorage.getItem("presusJSON"));
 presupuestos = [];
@@ -65,6 +71,7 @@ for (presupuesto of presupuestos) {
     `
     listaPresupuestos.appendChild(gastoPresupuestado)
 }
+
 
 //5 - mostrar el balance en cero
 //6 - captura de gastos del usuario
@@ -86,6 +93,31 @@ class Gasto {
     }
 
 }
+
+/////**********************************Jquery************************** */
+///agregar opciones para categoria gasto
+const catGastos = ['Gastos Fijos', 'Compras', 'Transporte', 'Ocio']
+for (cat of catGastos) {
+    $('#categoriasGastos').append(`<option value="gastosFijos">${cat}</option>`)
+}
+
+//agregar color a los input
+$("input").focus(function() {
+    $(this).css("background-color", "#fff");
+});
+$("input").blur(function() {
+    $(this).css("background-color", "#cccccc");
+});
+
+//cambiar color boton en hover
+$("button").hover(
+    function() {
+        $(this).addClass("hover");
+    },
+    function() {
+        $(this).removeClass("hover");
+    }
+);
 
 //array de gastos del mes
 let gastosMes = [];
