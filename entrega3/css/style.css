@@ -1,0 +1,196 @@
+/* ocultar input */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.contCenter {
+    width: 90%;
+    max-width: 1000px;
+    padding: 40px 20px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/****reporte presupuesto***/
+
+.reportePresupuesto {
+    min-width: 360px;
+    max-width: 600px;
+    background: #20c997;
+    border-radius: 15px;
+    padding: 30px;
+    min-height: 360px;
+    max-height: 450px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 10px 0 rgba(90, 116, 148, 0.3);
+}
+
+.reportePresupuesto p {
+    font-size: 1.25rem;
+    margin: 0px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 20px 0px;
+    text-transform: uppercase;
+}
+
+#presusReporte p {
+    font-size: 1rem;
+    margin: 0px;
+    text-transform: capitalize;
+}
+
+.col1Reporte {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/************formulario presupuesto*****/
+
+#datosUsuario {
+    min-width: 360px;
+    background: #20c997;
+    width: 100%;
+    padding: 150px 30px 30px 30px;
+    max-width: 700px;
+    border-radius: 10px;
+    position: relative;
+    top: -150px;
+    z-index: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path .3s ease-out;
+    box-shadow: 0 10px 10px 0 rgba(90, 116, 148, 0.8);
+}
+
+#datosUsuario.activo {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+
+/*********boton abrir formulario******/
+
+.abrirFormulario {
+    width: 200px;
+    height: 60px;
+    font-size: 16px;
+    line-height: 20px;
+    margin: auto;
+    background-color: #2364d2;
+    color: #fff;
+    position: relative;
+    top: -25px;
+    z-index: 3;
+    border-radius: 25%;
+    box-shadow: -5px 4px 8px rgb(24, 56, 182, 0.4);
+    padding: 5px;
+    transition: all .2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.abrirFormulario:hover {
+    background: #1850b1;
+}
+
+.abrirFormulario .activo {
+    transform: rotate(45deg);
+}
+
+#datosUsuario .activo {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+
+/*****************/
+
+.oculto {
+    /* height: 0px;
+    width: 0px; */
+    display: none;
+}
+
+#contIngresos {
+    width: 70%;
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+    padding: 10%;
+    border-radius: 10px;
+}
+
+#inputIngresos {
+    margin: 5%;
+}
+
+#divListaGastos {
+    display: flex;
+    border-radius: 10px;
+    margin: auto;
+}
+
+#formularioGastos {
+    width: 45%;
+    margin-top: 50px;
+    min-width: 350px;
+    max-width: 600px;
+}
+
+.grupo {
+    margin: 20px;
+}
+
+.labelGasto {
+    width: 300px;
+}
+
+.btnGastos {
+    width: 80px;
+}
+
+#listaPresupuestos {
+    min-width: 350px;
+}
+
+#btnEnviarPresu {
+    width: 100%;
+}
+
+#btnEnviarPresu:hover {
+    background-color: darkslateblue;
+    color: lavender;
+    margin-top: 10px;
+}
+
+#login {
+    width: 50%;
+    margin: 50px auto;
+    padding: 10%;
+    border-radius: 10px;
+}
+
+
+/*
+#login button {
+    width: 150px;
+    margin: 25px;
+    background-color: deepskyblue;
+    color: ghostwhite;
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+    text-transform: uppercase;
+} */
