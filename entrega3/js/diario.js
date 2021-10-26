@@ -41,9 +41,6 @@ let ingresos = presupuestos[0].monto;
 let gastos = 0;
 let balance = ingresos - gastos;
 
-// cargarData(ingresosMensualesPrint, ingresos);
-// cargarData(gastosMensualesPrint, gastos);
-// cargarData(balanceMensualPrint, balance);
 
 //2- mostrarlos en pantalla
 ingresosPrint = document.createElement('p')
@@ -102,8 +99,6 @@ class Gasto {
 
     infoGasto() {
 
-        // console.log('gastaste ' + this.monto + ' en ' + this.categoria + ' para ' + this.detalle)
-
         return `gastaste ${this.monto} en ${this.categoria} para  ${this.detalle}`;
     }
 
@@ -158,7 +153,7 @@ function printGastos() {
     }
 
 
-    // console.log(listaGastos)
+
     gastos = gastosMes.reduce((sumatoria, expense) => sumatoria + expense.monto, 0)
     gastosPrint.textContent = gastos;
     balance = ingresos - gastos;
@@ -177,15 +172,6 @@ btnGasto.addEventListener('click', (e) => {
     console.log(gastosMes);
 })
 
-// fetch('../json/data.json')
-//     .then((response) => response.json())
-//     .then((data) => {
-//         console.log(data)
-
-//         const categoria = data.categoria
-//         const monto = data.monto
-
-//     })
 
 /*****gastos anteriores */
 let gastosAnteriores = []
@@ -225,7 +211,7 @@ function mostarGastosAnt(array) {
 
 function filtro() {
     let valorFiltroCategoria = selCategoria.value
-    let valorFiltroMes = selMes.value
+
 
     let arrayFiltrado = []
 
@@ -235,22 +221,9 @@ function filtro() {
         arrayFiltrado = gastosAnteriores.filter(el => el.categoria == selCategoria.value)
     }
 
-
-    // if (valorFiltroMes !== 'Todos') {
-    //     arrayFiltrado = gastosAnteriores.filter(el => el.mes == selMes.value)
-
-    // } else {
-    //     arrayFiltrado = gastosAnteriores
-    // }
-
-
     mostarGastosAnt(arrayFiltrado)
 }
 
 selCategoria.addEventListener('change', () => {
     filtro()
 })
-
-// selMes.addEventListener('change', () => {
-//     filtro()
-// })

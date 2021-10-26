@@ -52,7 +52,6 @@ function capturarDatos(input, print) {
 
 
         input.value = valorInput.replace(/\s/g, '').replace(/\D/g, '');
-        // let valorInput = input.value.replace(/\s/g, '').replace(/\D/g, '');;
         if (input.value == "") {
             valorInput = 0;
         }
@@ -86,32 +85,7 @@ capturarDatos(inputTrasnporte, transportePrint);
 capturarDatos(inputOcio, ocioPrint);
 
 
-
-// botonEnviar.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     // ingresos = parseInt(ingresosPrint.textContent);
-//     // gastos = parseInt(gastosPrint.textContent);
-//     // gastosFijos = parseInt(gastosFijosPrint.textContent);
-//     // gastosCompras = parseInt(comprasPrint.textContent);
-//     // gastosTrasnporte = parseInt(transportePrint.textContent);
-//     // gastosOcio = parseInt(ocioPrint.textContent);
-
-//     presusMes.push(new Presupuesto(categoria, parseInt(print.textContent)))
-// })
-
-// function clickBtnPresu(print, categoria) {
-//     let valorInput = print.texcontent;
-//     let catInput = 
-//     presusMes.push(new Presupuesto(categoria, parseInt(valorInput)))
-// }
-
-// botonEnviar.addEventListener('click', (e) => {
-//     e.preventDefault();
-
-//         // clearInputs();
-//         // totalPresusMes()
-// })
-
+///guardar datos en submit
 $("form").on('submit', (function(e) {
     e.preventDefault();
     let capturaInfo = ($(this).serializeArray());
