@@ -75,26 +75,32 @@
     </div>
 
     <div>
-        <div class="container bg-info">
-            <select id="selCategoria">
-            <option value="all">Todos</option>
-            <option value="Gastos Fijos">Gastos Fijos</option>
-            <option value="Compras">Compras</option>
-            <option value="Transporte">Transporte</option>
-            <option value="Ocio">Ocio</option>
-        </select>
+        <button class="btn btn-primary m-5" id="verAnteriores">Ver gastos Anteriores</button>
+
+        <div id="contAnteriores">
+
+
+            <div class="container bg-info">
+                <select id="selCategoria">
+                    <option value="all">Todos</option>
+                    <option value="Gastos Fijos">Gastos Fijos</option>
+                    <option value="Compras">Compras</option>
+                    <option value="Transporte">Transporte</option>
+                    <option value="Ocio">Ocio</option>
+                </select>
+            </div>
+
+
+            <table class="table">
+                <thead>
+                    <th>categoria</th>
+                    <th>monto</th>
+                    <th>mes</th>
+                </thead>
+                <tbody id="datasAntPrint">
+                </tbody>
+            </table>
         </div>
-
-
-        <table class="table">
-            <thead>
-                <th>categoria</th>
-                <th>monto</th>
-                <th>mes</th>
-            </thead>
-            <tbody id="datasAntPrint">
-            </tbody>
-        </table>
     </div>
 
 

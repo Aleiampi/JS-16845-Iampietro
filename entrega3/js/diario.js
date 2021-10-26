@@ -174,6 +174,12 @@ btnGasto.addEventListener('click', (e) => {
 
 
 /*****gastos anteriores */
+document.getElementById('contAnteriores').style.display = 'none';
+let verAnteriores = document.getElementById('verAnteriores')
+
+
+
+
 let gastosAnteriores = []
 
 const cargarDatos = async() => {
@@ -186,7 +192,13 @@ const cargarDatos = async() => {
 
 }
 
-cargarDatos()
+verAnteriores.addEventListener('click', (e) => {
+    e.preventDefault()
+    cargarDatos()
+    document.getElementById('contAnteriores').style.display = 'block';
+})
+
+// cargarDatos()
 
 const datasAntPrint = document.getElementById('datasAntPrint')
 const selCategoria = document.getElementById('selCategoria')
