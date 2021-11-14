@@ -199,7 +199,7 @@ let ocioSaldoPrint = document.getElementById('ocioSaldoPrint')
 function sumarCategoria(categoria, id, print, saldo, titulo) {
     let gastosFiltrados = gastosMes.filter(el => el.categoria == categoria)
     totalCategoria = gastosFiltrados.reduce((sumatoria, expense) => sumatoria + parseInt(expense.monto), 0);
-    // console.log(totalCategoria)
+
     let saldoCategoria = presupuestos[id].monto - totalCategoria
 
 
@@ -210,7 +210,6 @@ function sumarCategoria(categoria, id, print, saldo, titulo) {
     if (saldoCategoria <= 0) { //se pone verde
         titulo.classList.add("presuNegativo")
         titulo.classList.remove("presuAlerta")
-        // titulo.classList.remove("presuNegativo")
     }
 
     print.textContent = totalCategoria
@@ -229,25 +228,6 @@ btnGasto.addEventListener('click', (e) => {
     console.log(gastosMes);
 })
 
-
-///eliminar gasto
-// let eliminarGasto = document.querySelectorAll('.eliminarGasto')
-// $(".eliminarGasto").on("click", '.delete', function() {
-//     var confirmation = confirm('Are you sure you want to delete this action plan/s?');
-//     if (confirmation) {
-//         $(this).closest('.gastoUnico').remove();
-//     }
-// });
-
-
-
-// Array.prototype.remove = function (key, value) {
-//     const index = this.findIndex(obj => obj[key] === value);
-//     return index >= 0 ? [
-//         ...this.slice(0, index),
-//         ...this.slice(index + 1)
-//     ] : this;
-// };
 
 function resetColor(titulo) {
     titulo.classList.remove("presuNegativo");
@@ -318,9 +298,6 @@ $(document).on("click", ".eliminarGasto", function () {
 });
 
 
-
-
-
 /************************gastos anteriores *********************/
 document.getElementById('contAnteriores').style.display = 'none';
 let verAnteriores = document.getElementById('verAnteriores')
@@ -368,85 +345,9 @@ function mostarGastosAnt(array) {
 }
 
 //filtrar gastos por categoria
-// function filtro() {
-//     let valorFiltroCategoria = selCategoria.value
 
-
-//     let arrayFiltrado = []
-
-//     if (valorFiltroCategoria == 'all') {
-//         arrayFiltrado = gastosAnteriores
-//     } else {
-//         arrayFiltrado = gastosAnteriores.filter(el => el.categoria == selCategoria.value)
-//     }
-
-//     mostarGastosAnt(arrayFiltrado)
-// }
-
-// selCategoria.addEventListener('change', () => {
-//     filtro()
-// })
-
-
-// function filtro(input) {
-     
-//     // let inputFElegido = input
-    
-//     let keyword = input.value
-
-//     console.log(keyword)
-
-
-//     // let arrayFiltrado = []
-
-//     // if (valorFiltroCategoria == 'all') {
-//     //     arrayFiltrado = gastosAnteriores
-//     // } else {
-//     //     arrayFiltrado = gastosAnteriores.filter(el => el.key == keyword)
-//     // }
-
-//     // mostarGastosAnt(arrayFiltrado)
-// }
-
-
-
-
-// selCategoria.addEventListener('change', () => {
-//         filtro(selMes)
-//     })
-
-
-
-
-
-// function filtrarAnt(select) {
-//     select.addEventListener('change', () => {
-//         let valorFiltroCategoria = select.value
-
-
-//         let arrayFiltrado = []
-
-//         // param = el.param
-
-//         if (valorFiltroCategoria == 'all') {
-//             arrayFiltrado = gastosAnteriores
-//         } else {
-//             arrayFiltrado = gastosAnteriores.filter(el => el.categoria == select.value)
-//         }
-
-//         mostarGastosAnt(arrayFiltrado)
-//         console.log(arrayFiltrado)
-//     })
-
-
-// }
-
-// filtrarAnt(selCategoria, 'categoria')
-// filtrarAnt(selMes, 'mes')
-
-// filtrar gastos por categoria
 function filtroCat() {
-    // mostarGastosAnt(gastosAnteriores)
+  
     let valorFiltroCategoria = selCategoria.value
 
 
@@ -464,9 +365,9 @@ function filtroCat() {
 
 
 
-//filtrar gastos por categoria
+//filtrar gastos por mes
 function filtroMes() {
-    // mostarGastosAnt(gastosAnteriores)
+   
     let valorFiltroMes = selMes.value
 
     let arrayFiltrado = []

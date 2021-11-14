@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presupuesto Personal - diario</title>
     <!-- bootstrap  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        crossorigin="anonymous">
     <!-- sweetalert -->
     <link rel="stylesheet" href="../sweetAlert2/sweetalert2.css">
     <!-- estilos -->
@@ -19,57 +20,53 @@
     <h1 class="display-2 text-center m-5 ">Mi presupuesto</h1>
 
     <div class="row">
-<!-- ingreso gastos -->
-<div class="col inputGastos bg-info my-3 p-5 rounded-3">
-    <h2>Gastos</h2>
-    <p>Ingrese un gasto:</p>
-    <form class="row" id="formGastos">
-        <div class="col">
-            <label for="categoriaGastos">Categoria</label>
-            <select name="categoriaGastos" id="categoriasGastos" required>
-            <option hidden disabled selected value> -- select an option -- </option>
-            <option value="gastosFijos">Gastos Fijos</option>
-            <option value="compras">Compras</option>
-            <option value="transporte">Transporte</option>
-            <option value="ocio">Ocio</option>
-        </select>
+        <!-- ingreso gastos -->
+        <div class="col inputGastos bg-info my-3 p-5 rounded-3">
+            <h2>Gastos</h2>
+            <p>Ingrese un gasto:</p>
+            <form class="row" id="formGastos">
+                <div class="col">
+                    <label for="categoriaGastos">Categoria</label>
+                    <select name="categoriaGastos" id="categoriasGastos" required>
+                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option value="gastosFijos">Gastos Fijos</option>
+                        <option value="compras">Compras</option>
+                        <option value="transporte">Transporte</option>
+                        <option value="ocio">Ocio</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="inputGastos">Monto $</label>
+                    <input type="text" id="inputGastos" required>
+
+                </div>
+                <div class="col">
+                    <label for="detalleGasto">Descripcion</label>
+                    <input type="text" id="detalleGasto">
+                </div>
+                <button class="btn btn-light" id="btnGasto">Enviar</button>
+            </form>
         </div>
+
         <div class="col">
-            <label for="inputGastos">Monto $</label>
-            <input type="text" id="inputGastos" required>
-            
+            <!-- ingresos - balance - gastos -->
+            <!-- aqui va el detalle de ingresos, gastos, y en medio el saldo -->
+            <div class="row  bg-dark my-3 mx-auto p-5 ">
+                <div class="col bg-success rounded-pill text-center mx-3 p-3" id="ingresosMensualesPrint">
+                    <h3>Ingresos</h3>
+                </div>
+                <div class="col bg-warning rounded-pill text-center mx-3 p-3" id="balanceMensualPrint">
+                    <h3>Balance</h3>
+                </div>
+                <div class="col bg-danger rounded-pill text-center mx-3 p-3" id="gastosMensualesPrint">
+                    <h3>Gastos</h3>
+                </div>
+            </div>
+
         </div>
-        <div class="col">
-            <label for="detalleGasto">Descripcion</label>
-            <input type="text" id="detalleGasto">
-        </div>
-        <button class="btn btn-light" id="btnGasto">Enviar</button>
-    </form>
-</div>
-
-<div class="col">
-<!-- ingresos - balance - gastos -->
-<!-- aqui va el detalle de ingresos, gastos, y en medio el saldo -->
-<div class="row  bg-dark my-3 mx-auto p-5 ">
-    <div class="col bg-success rounded-pill text-center mx-3 p-3" id="ingresosMensualesPrint">
-        <h3>Ingresos</h3>
-    </div>
-    <div class="col bg-warning rounded-pill text-center mx-3 p-3" id="balanceMensualPrint">
-        <h3>Balance</h3>
-    </div>
-    <div class="col bg-danger rounded-pill text-center mx-3 p-3" id="gastosMensualesPrint">
-        <h3>Gastos</h3>
-    </div>
-</div>
-
-</div>
-
-
-
-
 
     </div>
-    
+
 
     <!-- detalle presupuestos  -->
     <div class="row mx-auto justify-content-center">
@@ -91,7 +88,6 @@
 
         <div id="contAnteriores">
 
-
             <div class="container bg-info">
                 <select id="selCategoria">
                     <option value="all">Todos</option>
@@ -106,7 +102,6 @@
                     <option value="Septiembre">Septiembre</option>
                 </select>
             </div>
-
 
             <table class="table">
                 <thead>
@@ -128,7 +123,8 @@
     <!-- jquery  -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js " integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin=" anonymous "></script>
     <!-- bootstrap  -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js " integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13 " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js " integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13 " crossorigin="anonymous ">
+    </script>
     <!-- sweetAlert2 -->
     <script src="../sweetAlert2/sweetalert2.all.min.js "></script>
     <!-- javascript -->

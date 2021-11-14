@@ -35,12 +35,8 @@ let inputIngresos = document.getElementById('inputIngresos'),
     datosUsuario = document.getElementById('datosUsuario'),
     botonEnviar = document.getElementById('botonEnviar');
 
-/*boton abrir formulario*/
-// btnAbrirFormulario.addEventListener('click', () => {
-//     btnAbrirFormulario.classList.toggle('activo');
-//     datosUsuario.classList.toggle('activo');
-// })
 
+//abrir el formulario 
 $('#btn-abrir-formulario').on('click', (() => {
     $("#datosUsuario").toggleClass("activo");
 }))
@@ -50,15 +46,13 @@ function capturarDatos(input, print) {
     input.addEventListener('keyup', (e) => {
         let valorInput = e.target.value;
 
-
         input.value = valorInput.replace(/\s/g, '').replace(/\D/g, '');
         if (input.value == "") {
             valorInput = 0;
         }
         print.textContent = valorInput;
-
-
     })
+    
     input.addEventListener('blur', () => {
         let gastosSuma = parseInt(gastosFijosPrint.textContent) + parseInt(comprasPrint.textContent) + parseInt(transportePrint.textContent) + parseInt(ocioPrint.textContent);
         gastosPrint.textContent = gastosSuma;
