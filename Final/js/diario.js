@@ -388,26 +388,104 @@ function mostarGastosAnt(array) {
 // })
 
 
-function filtrarAnt(select, param) {
-    select.addEventListener('change', () => {
-        let valorFiltroCategoria = select.value
+// function filtro(input) {
+     
+//     // let inputFElegido = input
+    
+//     let keyword = input.value
+
+//     console.log(keyword)
 
 
-        let arrayFiltrado = []
+//     // let arrayFiltrado = []
 
-        param = el.param
+//     // if (valorFiltroCategoria == 'all') {
+//     //     arrayFiltrado = gastosAnteriores
+//     // } else {
+//     //     arrayFiltrado = gastosAnteriores.filter(el => el.key == keyword)
+//     // }
 
-        if (valorFiltroCategoria == 'all') {
-            arrayFiltrado = gastosAnteriores
-        } else {
-            arrayFiltrado = gastosAnteriores.filter(el => param == select.value)
-        }
-
-        mostarGastosAnt(arrayFiltrado)
-    })
+//     // mostarGastosAnt(arrayFiltrado)
+// }
 
 
+
+
+// selCategoria.addEventListener('change', () => {
+//         filtro(selMes)
+//     })
+
+
+
+
+
+// function filtrarAnt(select) {
+//     select.addEventListener('change', () => {
+//         let valorFiltroCategoria = select.value
+
+
+//         let arrayFiltrado = []
+
+//         // param = el.param
+
+//         if (valorFiltroCategoria == 'all') {
+//             arrayFiltrado = gastosAnteriores
+//         } else {
+//             arrayFiltrado = gastosAnteriores.filter(el => el.categoria == select.value)
+//         }
+
+//         mostarGastosAnt(arrayFiltrado)
+//         console.log(arrayFiltrado)
+//     })
+
+
+// }
+
+// filtrarAnt(selCategoria, 'categoria')
+// filtrarAnt(selMes, 'mes')
+
+// filtrar gastos por categoria
+function filtroCat() {
+    // mostarGastosAnt(gastosAnteriores)
+    let valorFiltroCategoria = selCategoria.value
+
+
+    let arrayFiltrado = []
+
+    if (valorFiltroCategoria == 'all') {
+        arrayFiltrado = gastosAnteriores
+    } else {
+        arrayFiltrado = gastosAnteriores.filter(el => el.categoria == selCategoria.value)
+    }
+
+    selMes.value = "Todos"
+    mostarGastosAnt(arrayFiltrado)
 }
 
-filtrarAnt(selCategoria, 'categoria')
-filtrarAnt(selMes, 'mes')
+
+
+//filtrar gastos por categoria
+function filtroMes() {
+    // mostarGastosAnt(gastosAnteriores)
+    let valorFiltroMes = selMes.value
+
+    let arrayFiltrado = []
+
+    if (valorFiltroMes == 'todos') {
+        arrayFiltrado = gastosAnteriores
+    } else {
+        arrayFiltrado = gastosAnteriores.filter(el => el.mes == selMes.value)
+    }
+
+    selCategoria.value = "all"
+
+    mostarGastosAnt(arrayFiltrado)
+}
+
+selMes.addEventListener('change', () => {
+    filtroMes()
+})
+
+selCategoria.addEventListener('change', () => {
+    filtroCat()
+})
